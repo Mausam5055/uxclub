@@ -1,6 +1,3 @@
-
-
-
 /* eslint-env node */
 import 'dotenv/config';
 import express from 'express';
@@ -42,24 +39,33 @@ const allowedOrigins = process.env.CLIENT_ORIGIN
   ? process.env.CLIENT_ORIGIN.split(',').map(origin => origin.trim())
   : ['http://localhost:5173', 'https://uxclub.vercel.app'];
 
+console.log('Allowed CORS origins:', allowedOrigins);
+
+// Enhanced CORS configuration
 app.use(
   cors({
     origin: (origin, callback) => {
       // Allow requests with no origin (like mobile apps, Postman, curl, etc.)
-      if (!origin) return callback(null, true);
+      if (!origin) {
+        return callback(null, true);
+      }
       
-      if (allowedOrigins.indexOf(origin) !== -1) {
+      const isAllowed = allowedOrigins.includes(origin);
+      if (isAllowed) {
         callback(null, true);
       } else {
-        // Deny the request
+        console.warn(`CORS blocked origin: ${origin}`);
         callback(null, false);
       }
     },
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    exposedHeaders: ['Content-Type'],
     credentials: true,
+    optionsSuccessStatus: 200, // Some legacy browsers (IE11) choke on 204
   }),
 );
+
 app.use(express.json());
 
 const validateTeam = (payload) => {

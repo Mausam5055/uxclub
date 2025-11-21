@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* Lenis smooth scrolling styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Hide scrollbar for the entire website in desktop mode */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.bg-scroller {
+  background: linear-gradient(to right, white 90%, rgba(255, 255, 255, 0.493) 100%);
+}
+
+.grid-pattern {
+  background: conic-gradient(
+      from 90deg at 1px 1px,
+      rgba(0, 0, 0, 0) 90deg,
+      #dfe0e8 0
+    )
+    0 0 / 32px 32px;
+}
+
+.linear-grid {
+  background:
+    linear-gradient(to right, white, transparent),
+    conic-gradient(
+      from 90deg at 1px 1px,
+      rgba(0, 0, 0, 0) 90deg,
+      #dfe0e8 0
+    );
+  background-size: 100% 100%, 30px 30px;
+  background-repeat: no-repeat, repeat;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

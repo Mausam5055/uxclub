@@ -9,7 +9,7 @@ const Hero = () => {
           <h1 className="mt-8 px-5 md:px-6 text-[6vh] md:text-[8vh] md:mt-0 leading-[1.1] tracking-tighter md:tracking-tight text-left capitalize">
             Great product originate from great design
             <span>
-              
+
               <img
                 className="object-cover h-8 md:h-12 inline-block gap-2"
                 src={tick}
@@ -45,10 +45,33 @@ const Hero = () => {
                 </svg>
               </div>
             </Link>
-            <button className="flex items-center w-[90%] h-14 ml-5 md:ml-6 mt-2 md:mt-20 bg-white text-black rounded-xl justify-between border-2 border-black hover:bg-black hover:text-white">
-              <a className="px-4 md:text-lg" href="">
+            <button
+              className="flex items-center w-[90%] h-14 ml-5 md:ml-6 mt-2 md:mt-20 bg-white text-black rounded-xl justify-between border-2 border-black hover:bg-black hover:text-white"
+              onClick={() => {
+                const section = document.getElementById('testimonials');
+                if (section) {
+                  const headerHeight = window.innerWidth >= 1024 ? 80 : 72;
+                  if (window.lenis) {
+                    window.lenis.scrollTo(section, {
+                      offset: -headerHeight,
+                      immediate: true,
+                      duration: 0,
+                      force: true
+                    });
+                  } else {
+                    const elementPosition = section.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }}
+            >
+              <span className="px-4 md:text-lg">
                 Know More
-              </a>
+              </span>
               <div className="h-8 w-8 mr-4">
                 <svg
                   viewBox="0 0 24 24"
@@ -88,21 +111,21 @@ const Hero = () => {
             <img
               className="w-full h-full rounded-[14vh] md:rounded-[22vh] lg:rounded-[29vh] object-cover"
               src="1.jpeg"
-              alt=""
+              alt="Design2Code Hackathon participants collaborating on frontend development"
             />
           </div>
           <div className="absolute w-[11vh] md:w-[18vh] h-[8vh] md:h-[14vh] z-10 top-[8%] left-[70%]">
             <img
               className="rounded-lg object-cover"
               src="image1.png"
-              alt=""
+              alt="UX design collaboration workspace"
             />
           </div>
           <div className="absolute w-[11vh] md:w-[18vh] h-[7vh] md:h-[12vh] z-10 bottom-[12%] right-[62%] md:right-[68%] hidden md:block">
             <img
               className="rounded-lg object-cover"
               src="image3.png"
-              alt=""
+              alt="Frontend development and design showcase"
             />
           </div>
           {/* <div className="absolute w-[28vh] h-[10vh] z-10 bottom-[5%] left-1/2">
@@ -115,7 +138,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="relative w-full overflow-hidden py-1 border-t border-b bg-white flex items-center justify-center mt-12">
-       
+
         <div className="w-full">
           <div className="flex w-max items-center animate-marquee mx-auto gap-24">
             {Array(4)
@@ -125,16 +148,16 @@ const Hero = () => {
                   <img
                     className="h-14 object-contain filter invert"
                     src="VITB-Logo.svg"
-                    alt=""
+                    alt="VIT Bhopal University logo"
                   />
                   <svg viewBox="-100 0 600 150" className="items-center px-4 h-20 md:h-24">
                     <defs>
                       <filter id="glitch">
-                        <feTurbulence baseFrequency="0.8" numOctaves="1" result="t"/>
-                        <feDisplacementMap in="SourceGraphic" in2="t" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+                        <feTurbulence baseFrequency="0.8" numOctaves="1" result="t" />
+                        <feDisplacementMap in="SourceGraphic" in2="t" scale="10" xChannelSelector="R" yChannelSelector="G" />
                       </filter>
                     </defs>
-                    <rect width="100%" height="100%" fill="#ffffff"/>
+                    <rect width="100%" height="100%" fill="#ffffff" />
                     <g filter="url(#glitch)" transform="translate(0, 10)">
                       <text x="0" y="55%" fontSize="64" textAnchor="start" fill="#000000">Design<tspan fill="red">2</tspan>Code</text>
                     </g>
@@ -142,7 +165,7 @@ const Hero = () => {
                   <img
                     className="h-14 object-contain filter invert"
                     src="UXClub.svg"
-                    alt=""
+                    alt="UX Club VIT Bhopal logo"
                   />
                 </div>
               ))}

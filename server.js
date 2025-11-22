@@ -1,8 +1,11 @@
 /* eslint-env node */
-import 'dotenv/config';
+import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
+
+// Load environment variables
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -25,44 +28,75 @@ const registrationSchema = new mongoose.Schema({
 const Registration = mongoose.model('Registration', registrationSchema);
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI || '')
+const mongoUri = process.env.MONGO_URI?.trim();
+
+if (!mongoUri) {
+  console.error('MONGO_URI is not defined in environment variables');
+  console.error('Available env vars:', Object.keys(process.env).filter(k => k.includes('MONGO')));
+  process.exit(1);
+}
+
+// Verify the connection string format
+if (!mongoUri.startsWith('mongodb://') && !mongoUri.startsWith('mongodb+srv://')) {
+  console.error('Invalid MONGO_URI format. Must start with mongodb:// or mongodb+srv://');
+  console.error('Received:', mongoUri.substring(0, 20) + '...');
+  process.exit(1);
+}
+
+console.log('Attempting to connect to MongoDB...');
+mongoose.connect(mongoUri)
   .then(() => {
-    console.log('Connected to MongoDB');
+    console.log('Connected to MongoDB successfully');
   })
   .catch((error) => {
-    console.error('MongoDB connection error:', error);
+    console.error('MongoDB connection error:', error.message);
     process.exit(1);
   });
 
 // CORS Configuration - Allow production frontend
+// Normalize origins by removing trailing slashes and converting to lowercase
+const normalizeOrigin = (origin) => {
+  if (!origin) return origin;
+  return origin.trim().replace(/\/+$/, '').toLowerCase();
+};
+
 const allowedOrigins = process.env.CLIENT_ORIGIN 
-  ? process.env.CLIENT_ORIGIN.split(',').map(origin => origin.trim())
-  : ['http://localhost:5173', 'https://uxclub.vercel.app'];
+  ? process.env.CLIENT_ORIGIN.split(',').map(origin => normalizeOrigin(origin)).filter(Boolean)
+  : ['http://localhost:5173', 'https://ux-club.vercel.app'].map(normalizeOrigin);
 
-console.log('Allowed CORS origins:', allowedOrigins);
+console.log('=== CORS Configuration ===');
+console.log('Allowed origins (normalized):', JSON.stringify(allowedOrigins, null, 2));
+console.log('CLIENT_ORIGIN env var:', process.env.CLIENT_ORIGIN || 'not set (using defaults)');
+console.log('========================');
 
-// Enhanced CORS configuration
+// CORS middleware - must be applied before routes
 app.use(
   cors({
-    origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps, Postman, curl, etc.)
+    origin: function (origin, callback) {
+      // Allow requests with no origin (mobile apps, Postman, curl, etc.)
       if (!origin) {
+        console.log('Request with no origin - allowing');
         return callback(null, true);
       }
       
-      const isAllowed = allowedOrigins.includes(origin);
-      if (isAllowed) {
+      // Normalize the incoming origin (remove trailing slash, lowercase)
+      const normalizedOrigin = normalizeOrigin(origin);
+      
+      // Check if normalized origin is in allowed list
+      if (allowedOrigins.includes(normalizedOrigin)) {
+        console.log(`✓ CORS allowing origin: ${origin} (normalized: ${normalizedOrigin})`);
         callback(null, true);
       } else {
-        console.warn(`CORS blocked origin: ${origin}`);
+        console.error(`✗ CORS blocked origin: ${origin} (normalized: ${normalizedOrigin})`);
+        console.error(`  Allowed origins (normalized): ${allowedOrigins.join(', ')}`);
         callback(null, false);
       }
     },
-    methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
+    methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
     exposedHeaders: ['Content-Type'],
     credentials: true,
-    optionsSuccessStatus: 200, // Some legacy browsers (IE11) choke on 204
+    optionsSuccessStatus: 200,
   }),
 );
 

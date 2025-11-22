@@ -33,7 +33,7 @@ class Pack extends React.Component {
 
   nextSlide = () => {
     const committeeMembers = [
-      { id: 1, name: 'Dr. T Venkateswara Rao', role: 'Faculty Co-ordinator', imageUrl: 'https://res.cloudinary.com/dy5utqlkm/image/upload/v1763376310/D56_0101_-_Copy_sbe7g9.png', linkedinUrl: 'https://www.linkedin.com/in/dr-t-venkateswara-rao/', bgColor: 'bg-white', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-1-icon.svg' },
+      { id: 1, name: 'Dr. T Venkateswara Rao', role: 'Faculty Co-ordinator', imageUrl: '10.webp', linkedinUrl: 'https://www.linkedin.com/in/dr-t-venkateswara-rao/', bgColor: 'bg-white', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-1-icon.svg' },
       { id: 2, name: 'Tanishk Kapoor', role: 'President', imageUrl: 'https://res.cloudinary.com/dy5utqlkm/image/upload/v1763376310/D56_0101_-_Copy_sbe7g9.png', linkedinUrl: 'https://www.linkedin.com/in/tanishk-kapoor-64722828a/', bgColor: 'bg-[#f1ee83]', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-2-icon.svg' },
       { id: 3, name: 'Sujal Singh', role: 'Vice President', imageUrl: 'https://res.cloudinary.com/dy5utqlkm/image/upload/v1763482021/Untitled_design__1_-removebg-preview_nhpkbh.png', linkedinUrl: 'https://www.linkedin.com/in/sujalsingh28/', bgColor: 'bg-[#e2c6ff]', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-2-icon.svg' },
       { id: 4, name: 'Sonakshi Saxena', role: 'General Secretary', imageUrl: 'https://res.cloudinary.com/dy5utqlkm/image/upload/v1763376454/IMG-20251117-WA0020_q9ewge.png', linkedinUrl: 'https://www.linkedin.com/in/sona14saxena', bgColor: 'bg-[#ffd4d4]', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-1-icon.svg' },
@@ -47,7 +47,7 @@ class Pack extends React.Component {
 
   prevSlide = () => {
     const committeeMembers = [
-      { id: 1, name: 'Dr. T Venkateswara Rao', role: 'Faculty Co-ordinator', imageUrl: 'https://res.cloudinary.com/dy5utqlkm/image/upload/v1763376310/D56_0101_-_Copy_sbe7g9.png', linkedinUrl: 'https://www.linkedin.com/in/dr-t-venkateswara-rao/', bgColor: 'bg-white', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-1-icon.svg' },
+      { id: 1, name: 'Dr. T Venkateswara Rao', role: 'Faculty Co-ordinator', imageUrl: '10.webp', linkedinUrl: 'https://www.linkedin.com/in/dr-t-venkateswara-rao/', bgColor: 'bg-white', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-1-icon.svg' },
       { id: 2, name: 'Tanishk Kapoor', role: 'President', imageUrl: 'https://res.cloudinary.com/dy5utqlkm/image/upload/v1763376310/D56_0101_-_Copy_sbe7g9.png', linkedinUrl: 'https://www.linkedin.com/in/tanishk-kapoor-64722828a/', bgColor: 'bg-[#f1ee83]', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-2-icon.svg' },
       { id: 3, name: 'Sujal Singh', role: 'Vice President', imageUrl: 'https://res.cloudinary.com/dy5utqlkm/image/upload/v1763482021/Untitled_design__1_-removebg-preview_nhpkbh.png', linkedinUrl: 'https://www.linkedin.com/in/sujalsingh28/', bgColor: 'bg-[#e2c6ff]', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-2-icon.svg' },
       { id: 4, name: 'Sonakshi Saxena', role: 'General Secretary', imageUrl: 'https://res.cloudinary.com/dy5utqlkm/image/upload/v1763376454/IMG-20251117-WA0020_q9ewge.png', linkedinUrl: 'https://www.linkedin.com/in/sona14saxena', bgColor: 'bg-[#ffd4d4]', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-1-icon.svg' },
@@ -84,7 +84,7 @@ class Pack extends React.Component {
 
   render() {
     const committeeMembers = [
-      { id: 1, name: 'Dr. T Venkateswara Rao', role: 'Faculty Co-ordinator', imageUrl: 'https://res.cloudinary.com/dy5utqlkm/image/upload/v1763376310/D56_0101_-_Copy_sbe7g9.png', linkedinUrl: 'https://www.linkedin.com/in/dr-t-venkateswara-rao/', bgColor: 'bg-white', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-1-icon.svg' },
+      { id: 1, name: 'Dr. T Venkateswara Rao', role: 'Faculty Co-ordinator', imageUrl: '10.webp', linkedinUrl: 'https://www.linkedin.com/in/dr-t-venkateswara-rao/', bgColor: 'bg-white', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-1-icon.svg' },
       { id: 2, name: 'Tanishk Kapoor', role: 'President', imageUrl: 'https://res.cloudinary.com/dy5utqlkm/image/upload/v1763376310/D56_0101_-_Copy_sbe7g9.png', linkedinUrl: 'https://www.linkedin.com/in/tanishk-kapoor-64722828a/', bgColor: 'bg-[#f1ee83]', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-2-icon.svg' },
       { id: 3, name: 'Sujal Singh', role: 'Vice President', imageUrl: 'https://res.cloudinary.com/dy5utqlkm/image/upload/v1763482021/Untitled_design__1_-removebg-preview_nhpkbh.png', linkedinUrl: 'https://www.linkedin.com/in/sujalsingh28/', bgColor: 'bg-[#e2c6ff]', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-2-icon.svg' },
       { id: 4, name: 'Sonakshi Saxena', role: 'General Secretary', imageUrl: 'https://res.cloudinary.com/dy5utqlkm/image/upload/v1763376454/IMG-20251117-WA0020_q9ewge.png', linkedinUrl: 'https://www.linkedin.com/in/sona14saxena', bgColor: 'bg-[#ffd4d4]', iconUrl: 'https://peekinsights.co/wp-content/uploads/2024/08/package-1-icon.svg' },
@@ -93,7 +93,7 @@ class Pack extends React.Component {
     ];
 
     return (
-      <div className="w-full py-10 h-full items-center grid bg-[#dcfebc]">
+      <div id="ourgoals" className="w-full py-10 h-full items-center grid bg-[#dcfebc]">
         <div className="grid grid-cols-1">
           <h2 className="font-serif font-light text-3xl md:text-5xl px-6 leading-10 text-center mb-4">
             Evaluation Committee
@@ -119,9 +119,9 @@ class Pack extends React.Component {
               <div className="px-3 py-3 flex flex-col items-center">
                 <div className="w-full aspect-[4/5] bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden mb-3">
                   {member.imageUrl ? (
-                    <img 
-                      src={member.imageUrl} 
-                      alt={member.name} 
+                    <img
+                      src={member.imageUrl}
+                      alt={member.name}
                       className="w-full h-full object-cover"
                     />
                   ) : (
@@ -129,9 +129,9 @@ class Pack extends React.Component {
                   )}
                 </div>
                 {member.linkedinUrl && (
-                  <a 
-                    href={member.linkedinUrl} 
-                    target="_blank" 
+                  <a
+                    href={member.linkedinUrl}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center w-full h-10 mb-2 bg-black text-white rounded-lg justify-between border-2 border-black hover:bg-white hover:text-black text-xs"
                   >
@@ -181,9 +181,9 @@ class Pack extends React.Component {
               <div className="px-6 pt-6 flex flex-col items-center">
                 <div className="w-64 h-80 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden mb-6">
                   {member.imageUrl ? (
-                    <img 
-                      src={member.imageUrl} 
-                      alt={member.name} 
+                    <img
+                      src={member.imageUrl}
+                      alt={member.name}
                       className="w-full h-full object-cover"
                     />
                   ) : (
@@ -191,9 +191,9 @@ class Pack extends React.Component {
                   )}
                 </div>
                 {member.linkedinUrl && (
-                  <a 
-                    href={member.linkedinUrl} 
-                    target="_blank" 
+                  <a
+                    href={member.linkedinUrl}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center w-[95%] h-12 mb-6 mt-4 bg-black text-white rounded-xl justify-between border-2 border-black hover:bg-white hover:text-black"
                   >

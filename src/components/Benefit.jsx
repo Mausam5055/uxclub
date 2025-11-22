@@ -46,56 +46,31 @@ export default class Benefit extends Component {
                 <p className="font-mono text-sm md:text-lg tracking-tight leading-[1.2] pt-3 font-light mb-8 text-center">
                   Exceptional prizes for outstanding teams, celebrating innovation and design excellence.
                 </p>
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div className="flex flex-col items-center gap-4 bg-white/70 rounded-2xl px-4 py-6">
-                    <div className="flex items-center gap-3">
-                      <svg
-                        className="w-8 h-8 text-gray-600"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                      <h3 className="font-mono text-2xl md:text-3xl text-gray-900 font-semibold">
-                        Winning Team
-                      </h3>
-                    </div>
-                    <p className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
-                      ₹4,000
-                    </p>
-                    <div className="flex items-center bg-white rounded-2xl gap-2 w-fit px-2">
-                      <span className="text-sm md:text-xl capitalize font-mono font-light py-2">
-                        Cash Gift Card
-                      </span>
-                    </div>
+                <div className="space-y-4 flex flex-col items-center">
+                  <div className="flex items-center gap-3 mb-3">
+                    <svg
+                      className="w-8 h-8 text-gray-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <h3 className="font-mono text-2xl md:text-3xl text-gray-900 font-semibold">
+                      Winning Team
+                    </h3>
                   </div>
-
-                  <div className="flex flex-col items-center gap-4 bg-white/70 rounded-2xl px-4 py-6">
-                    <div className="flex items-center gap-3">
-                      <svg
-                        className="w-8 h-8 text-gray-600"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                      <h3 className="font-mono text-2xl md:text-3xl text-gray-900 font-semibold">
-                        Best Design
-                      </h3>
-                    </div>
-                    <p className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
-                      ₹2,000
-                    </p>
-                    <div className="flex items-center bg-white rounded-2xl gap-2 w-fit px-2">
-                      <span className="text-sm md:text-xl capitalize font-mono font-light py-2">
-                        Cash Gift Card
-                      </span>
-                    </div>
+                  <p className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
+                    ₹4,000
+                  </p>
+                  <div className="flex items-center bg-white rounded-2xl gap-2 w-fit px-2 my-2">
+                    <span className="text-sm md:text-xl capitalize font-mono font-light py-2">
+                      Cash Gift Card
+                    </span>
                   </div>
                 </div>
-                
-                <div className="space-y-3 font-sans text-base md:text-lg mt-6">
-                  <div className="flex items-center bg-white rounded-2xl gap-2 w-full sm:w-fit px-3 py-2">
+
+                <div className="space-y-3 font-sans text-base md:text-lg">
+                  <div className="flex items-center bg-white rounded-2xl gap-2 w-fit px-2 my-2">
                     <div className="h-4 w-4 md:h-5 md:w-5">
                       <svg
                         viewBox="0 0 24 24"
@@ -554,7 +529,7 @@ export default class Benefit extends Component {
                     </svg>
                   </div>
                   <span className="text-sm md:text-xl font-mono font-light">
-                    The selected teams will be announced by 6:00 PM - 28/11/2025 via E-Mail
+                    Top 30 teams announced by 11:00 PM - 24/11/2025
                   </span>
                 </div>
               </div>

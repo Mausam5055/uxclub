@@ -164,7 +164,7 @@ const HackathonRegister = () => {
                     className="w-full rounded-2xl border border-black/20 bg-white px-4 py-3 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/10"
                     value={formData.leadName}
                     onChange={(e) => updateField('leadName', e.target.value)}
-                    placeholder="Riya Sharma"
+                    placeholder="Varun Kushwah"
                   />
                   {errors.leadName && <p className="mt-2 text-sm text-red-600">{errors.leadName}</p>}
                 </div>
@@ -179,7 +179,7 @@ const HackathonRegister = () => {
                     className="w-full rounded-2xl border border-black/20 bg-white px-4 py-3 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/10"
                     value={formData.leadEmail}
                     onChange={(e) => updateField('leadEmail', e.target.value)}
-                    placeholder="riya.sharma@vitbhopal.ac.in"
+                    placeholder="varun.kushwah@vitbhopal.ac.in"
                   />
                   {errors.leadEmail && <p className="mt-2 text-sm text-red-600">{errors.leadEmail}</p>}
                 </div>
@@ -194,7 +194,7 @@ const HackathonRegister = () => {
                     className="w-full rounded-2xl border border-black/20 bg-white px-4 py-3 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/10"
                     value={formData.leadPhone}
                     onChange={(e) => updateField('leadPhone', e.target.value)}
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 "
                   />
                   {errors.leadPhone && <p className="mt-2 text-sm text-red-600">{errors.leadPhone}</p>}
                 </div>
